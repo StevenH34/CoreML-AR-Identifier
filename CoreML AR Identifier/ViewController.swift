@@ -32,10 +32,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        regsiterGestureRecognizer()
     }
     
     // Register gesture
@@ -65,8 +67,45 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         visionRequest(pixelBuffer: pixelBuffer)
     }
     
+    // Create the text node
+    private func createTextNode(text: String) -> SCNNode{
+        let parentNode = SCNNode()
+        
+        let sphere = SCNSphere(radius: 0.01)
+        let sphereMaterial = SCNMaterial()
+        sphereMaterial.diffuse.contents = UIColor.blue
+        sphere.firstMaterial = sphereMaterial
+        
+        let sphereNode = SCNNode(geometry: sphere)
+        
+        let textGeometry = SCNText(string: text, extrusionDepth: 0)
+        textGeometry.firstMaterial?.diffuse.contents = UIColor.blue
+        textGeometry.firstMaterial?.specular.contents = UIColor.white
+        textGeometry.firstMaterial?.isDoubleSided = true
+        
+        // Change font text
+        let textFont = UIFont(name: "Futura", size: 0.3)
+        textGeometry.font = textFont
+        
+        let textNode = SCNNode(geometry: textGeometry)
+        textNode.scale = SCNVector3(0.1, 0.1, 0.1)
+        
+        parentNode.addChildNode(sphereNode)
+        parentNode.addChildNode(textNode)
+        return parentNode
+    }
+    
+    private func displayText(text: String) {
+        
+        let textNode = createTextNode(text: text)
+        
+        textNode.position = SCNVector3(self.hitTestResult.worldTransform.columns.3.x, self.hitTestResult.worldTransform.columns.3.y, self.hitTestResult.worldTransform.columns.3.z)
+        
+        self.sceneView.scene.rootNode.addChildNode(textNode)
+    }
+    
     // Sends it the image
-    func visionRequest(pixelBuffer: CVPixelBuffer) {
+    private func visionRequest(pixelBuffer: CVPixelBuffer) {
         // Create the model through which the vision will be passed
         let visionModel = try! VNCoreMLModel(for: self.resnetModel.model)
         // Vision CoreML request
@@ -80,6 +119,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let observation = observations.first as! VNClassificationObservation
             
             print("Name \(observation.identifier) and confidence is \(observation.confidence)")
+            
+            DispatchQueue.main.async {
+                self.displayText(text: observation.identifier)
+            }
         }
         
         // Configure the request
