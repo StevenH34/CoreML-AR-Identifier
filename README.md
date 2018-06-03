@@ -3,4 +3,4 @@
 
 iOS app using ARKit and CoreML.
 
-Detects objects in the scene using Places205-GoogLeNet.
+Detects objects in the scene using ResNet50.
