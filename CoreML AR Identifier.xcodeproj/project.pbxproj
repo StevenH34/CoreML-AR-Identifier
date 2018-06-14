@@ -8,18 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		8B4753A520C38301001CC4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4753A420C38301001CC4D3 /* AppDelegate.swift */; };
-		8B4753A720C38301001CC4D3 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4753A620C38301001CC4D3 /* art.scnassets */; };
 		8B4753A920C38301001CC4D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4753A820C38301001CC4D3 /* ViewController.swift */; };
 		8B4753AC20C38301001CC4D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4753AA20C38301001CC4D3 /* Main.storyboard */; };
 		8B4753AE20C38304001CC4D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4753AD20C38304001CC4D3 /* Assets.xcassets */; };
 		8B4753B120C38304001CC4D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4753AF20C38304001CC4D3 /* LaunchScreen.storyboard */; };
-		8B4753BE20C399CC001CC4D3 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B4753BD20C399CC001CC4D3 /* Resnet50.mlmodel */; };
+		8B70FE4420D2D995004E1674 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B4753BD20C399CC001CC4D3 /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B4753A120C38301001CC4D3 /* CoreML AR Identifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreML AR Identifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4753A420C38301001CC4D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B4753A620C38301001CC4D3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8B4753A820C38301001CC4D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B4753AB20C38301001CC4D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B4753AD20C38304001CC4D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 				8B4753BD20C399CC001CC4D3 /* Resnet50.mlmodel */,
 				8B4753A420C38301001CC4D3 /* AppDelegate.swift */,
 				8B4753A820C38301001CC4D3 /* ViewController.swift */,
-				8B4753A620C38301001CC4D3 /* art.scnassets */,
 				8B4753AA20C38301001CC4D3 /* Main.storyboard */,
 				8B4753AD20C38304001CC4D3 /* Assets.xcassets */,
 				8B4753AF20C38304001CC4D3 /* LaunchScreen.storyboard */,
@@ -128,7 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B4753A720C38301001CC4D3 /* art.scnassets in Resources */,
 				8B4753B120C38304001CC4D3 /* LaunchScreen.storyboard in Resources */,
 				8B4753AE20C38304001CC4D3 /* Assets.xcassets in Resources */,
 				8B4753AC20C38301001CC4D3 /* Main.storyboard in Resources */,
@@ -143,7 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4753A920C38301001CC4D3 /* ViewController.swift in Sources */,
-				8B4753BE20C399CC001CC4D3 /* Resnet50.mlmodel in Sources */,
+				8B70FE4420D2D995004E1674 /* Resnet50.mlmodel in Sources */,
 				8B4753A520C38301001CC4D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
